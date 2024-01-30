@@ -1,0 +1,5 @@
+Add error component in signout at Profile.jsx
+Add error message for signout in dropdown menu
+Add google sign in actions seperately
+Add upload image functionality to the editor in create post
+Getting warning in Update Post page `A component is changing an uncontrolled input to be controlled`

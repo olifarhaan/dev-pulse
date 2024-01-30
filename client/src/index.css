@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+h1 {
+  font-size: xx-large;
+  font-weight: 700;
+}
+
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine:after {
+  animation: shine 2s forwards infinite;
+  content: "";
+  position: absolute;
+  top: -50%; /* Adjusted position to cover full height */
+  right: -50%; /* Adjusted position to cover full width */
+  bottom: -50%; /* Adjusted position to cover full height */
+  left: -50%; /* Adjusted position to cover full width */
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent
+  );
+  transform: rotateZ(60deg) translate(-1em, 100%);
+}
+
+@keyframes shine {
+  100% {
+    transform: rotateZ(60deg) translate(0, -200%); /* Adjusted translation to cover full height */
+  }
+}
+
+.ql-editor {
+  min-height: 200px;
+  width: 100% !important;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.05rem;
+}
+
+.ql-toolbar .ql-picker-options {
+  font-family: "DM Sans", sans-serif;
+}
+
+.ql-toolbar{
+  z-index: 100;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: #EAECEC;
+}
+
+.post-content p {
+  margin-bottom: 0.5rem;
+}
+
+.post-content h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.5rem 0;
+}
+
+.post-content h2 {
+  font-size: 1.4rem;
+  margin: 1.5rem 0;
+}
+
+.post-content a {
+  color: rgb(73, 149, 199);
+  text-decoration: none;
+}
+
+.post-content a:hover {
+  text-decoration: underline;
+}
+
+.dark .post-content a {
+  color: red;
+}
