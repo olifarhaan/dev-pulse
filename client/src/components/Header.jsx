@@ -7,7 +7,7 @@ import {
   Navbar,
   TextInput,
 } from "flowbite-react"
-import { Link, useLocation } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import { SiMicrodotblog } from "react-icons/si"
 import { CiSearch, CiUser } from "react-icons/ci"
 import { PiSignOut } from "react-icons/pi"
@@ -27,6 +27,7 @@ const Header = () => {
   const checkPath = (path) => {
     return location.pathname === path
   }
+  const navigate = useNavigate()
 
   const navData = [
     {
@@ -128,7 +129,10 @@ const Header = () => {
             </DropdownItem>
           </Dropdown>
         ) : (
-          <button className="h-10 px-5 bg-accentOrange hover:bg-accentBlue rounded-lg text-white text-md transition duration-500 ease-in-out">
+          <button
+            className="h-10 px-5 bg-accentOrange hover:bg-accentBlue rounded-lg text-white text-md transition duration-500 ease-in-out"
+            onClick={navigate("/sign-in")}
+          >
             Sign In
           </button>
         )}

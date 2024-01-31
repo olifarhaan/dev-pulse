@@ -2,9 +2,9 @@ const Home = () => {
   return (
     <main>
       <section className="w-full min-h-screen flex justify-center items-center">
-        <div className="w-auto flex flex-col gap-4 max-w-4xl justify-center text-center">
+        <div className="w-auto flex flex-col gap-4 max-w-4xl justify-center text-center px-2">
           <p className="">Welcome to the World of Tech Blogs</p>
-          <h1 className="text-6xl">
+          <h1 className="text-2xl">
             Revolutionize Your Tech Journey with Dev Pulse: Stay Informed, Stay
             Ahead
           </h1>

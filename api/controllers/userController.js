@@ -46,6 +46,31 @@ export const getUsersController = async (req, res, next) => {
   }
 }
 
+export const getUserController = async (req, res, next) => {
+  const userId = req.params.userId
+  console.log("first");
+  
+  try {
+    const user = await User.findOne({ _id:userId })
+    if (!user) {
+      return next(errorHandler(404, "User not found"))
+    }
+    const { password, ...userWithoutPassword } = user._doc
+    console.log(userWithoutPassword, "------------------user without")
+
+    res
+      .status(200)
+      .jsonResponse(
+        200,
+        true,
+        "Users retrieved successfully",
+        userWithoutPassword
+      )
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
 export const updateUserController = async (req, res, next) => {
   console.log("iside ------------------------------------------>")
 

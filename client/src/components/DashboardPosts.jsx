@@ -73,7 +73,6 @@ const DashboardPosts = () => {
     }
     setPostIdToDelete(null)
   }
-  console.log(postIdToDelete, "post id to delete -------------------------")
 
   const handleShowMore = async () => {
     const startIndex = userPosts.length
@@ -105,7 +104,7 @@ const DashboardPosts = () => {
   }
 
   return (
-    <div className="overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500">
+    <div className="overflow-x-auto md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500">
       {currentUser.role === roles.ADMIN ||
       (currentUser.role === roles.AUTHOR && userPosts.length > 0) ? (
         <>

@@ -1,5 +1,6 @@
 import Post from "../models/postModel.js"
 import { UNAUTHORIZED_MESSAGE, roles } from "../utils/constants.js"
+import { errorHandler } from "../utils/errors.js"
 import generateSlug from "../utils/generateSlug.js"
 
 export const createPostController = async (req, res, next) => {
