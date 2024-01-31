@@ -4,7 +4,7 @@ const Home = () => {
       <section className="w-full min-h-screen flex justify-center items-center">
         <div className="w-auto flex flex-col gap-4 max-w-4xl justify-center text-center px-2">
           <p className="">Welcome to the World of Tech Blogs</p>
-          <h1 className="text-2xl">
+          <h1 className="text-2xl md:text-6xl">
             Revolutionize Your Tech Journey with Dev Pulse: Stay Informed, Stay
             Ahead
           </h1>

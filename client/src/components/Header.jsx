@@ -131,7 +131,7 @@ const Header = () => {
         ) : (
           <button
             className="h-10 px-5 bg-accentOrange hover:bg-accentBlue rounded-lg text-white text-md transition duration-500 ease-in-out"
-            onClick={navigate("/sign-in")}
+            onClick={() => navigate("/sign-in")}
           >
             Sign In
           </button>
