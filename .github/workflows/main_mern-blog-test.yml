@@ -28,7 +28,7 @@ jobs:
           npm run test --if-present
 
       - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+        run: Compress-Archive . release.zip
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
@@ -59,7 +59,7 @@ jobs:
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_EFC05E071898471A835D8A5F79DA66AD }}
 
       - name: unzip artifact for deployment
-        run: unzip release.zip
+        run: Expand-Archive release.zip
 
       - name: "Deploy to Azure Web App"
         uses: azure/webapps-deploy@v2
