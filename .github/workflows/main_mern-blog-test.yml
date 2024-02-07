@@ -51,8 +51,14 @@ jobs:
         with:
           name: node-app
 
-      - name: unzip artifact for deployment
-        run: unzip -o node-app/release.zip
+      - name: Unzip artifact for deployment
+        run: |
+          # Use PowerShell on Windows or unzip on Linux based on the runner OS
+          if [ "$RUNNER_OS" == "Windows" ]; then
+            Expand-Archive -Path node-app/release.zip -DestinationPath . -Force
+          else
+            unzip -o node-app/release.zip
+          fi
 
       - name: Login to Azure
         uses: azure/login@v1
